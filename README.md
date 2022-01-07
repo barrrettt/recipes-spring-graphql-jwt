@@ -16,7 +16,7 @@ In other case you can modify the properties and launch with gradle.
 ./gradlew bootRun
 ```
 ## Use
-Api can be consumed by default on port 9000. you can use a graphql client such as Altair, Firecamp or Postman, among others. Can get JWT with ADMIN user (user:admin)
+Api can be consumed by default on port 9000. you can use a graphql client such as Altair, Firecamp or Postman, among others. Can get JWT with ADMIN user:
 ```graphql
 mutation {
   signIn(name: "admin" password: "admin")
@@ -34,5 +34,8 @@ Authorization : Bearer xxxx.yyyy.xxxx
 
 ## References
 Spring Boot https://github.com/spring-projects/spring-boot
+
 GraphQL Java https://www.graphql-java.com/
+
 JWT https://github.com/jwtk/jjwt
+
