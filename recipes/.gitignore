@@ -1,0 +1,9 @@
+### Clasic ###
+*.class
+*.jar
+*.war
+*.ear
+.gradle/
+build/
+target/
+bin/
