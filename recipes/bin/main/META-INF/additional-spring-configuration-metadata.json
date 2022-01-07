@@ -1,0 +1,17 @@
+{"properties": [
+{
+  "name": "graphql.url",
+  "type": "java.lang.String",
+  "description": "API end point"
+},
+{
+"name": "jwt.jwtSecret",
+"type": "java.lang.String",
+"description": "secret"
+},
+{
+"name": "jwt.jwtExpirationMs",
+"type": "java.lang.Long",
+"description": "token live"
+}
+]}

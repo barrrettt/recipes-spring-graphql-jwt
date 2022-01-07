@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+    
+    mysqldb:
+        image: mysql
+        ports: 
+        - ${DB_PORT}:3306
+
+        environment:
+            MYSQL_TCP_PORT: 3306
+            MYSQL_DATABASE: ${DB_NAME}
+            MYSQL_USER: 'user'
+            MYSQL_PASSWORD: 'pass'
+            MYSQL_ROOT_PASSWORD: 'pass'
+
+        volumes:
+        - mysql:/var/lib/mysql
+        - mysql_config:/etc/mysql
+
+        # silence mysql things
+        cap_add: 
+        - SYS_NICE  
+        command: --default-authentication-plugin=mysql_native_password
+
+    app:
+        build:
+            context: ./recipes
+        image: recipes
+        ports:
+        - ${APP_PORT}:8080
+        
+        depends_on: 
+        - mysqldb 
+        restart: on-failure 
+
+        environment: 
+            server.port: 8080 
+            spring.datasource.url: 'jdbc:mysql://mysqldb:3306/${DB_NAME}?createDatabaseIfNotExist=true' 
+            spring.datasource.username: 'user' 
+            spring.datasource.password: 'pass' 
+
+volumes:
+    mysql:
+    mysql_config:
