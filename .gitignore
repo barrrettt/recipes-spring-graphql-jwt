@@ -1,13 +1,16 @@
 ### Clasic ###
 *.class
-*.jar
 *.war
 *.ear
 
 .gradle/
-build/
 target/
 bin/
 
+### ADD JAR ###
+/recipes/build/*
+!recipes/build/libs
+
 ### IDE ###
 .vscode
+
