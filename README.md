@@ -1,4 +1,4 @@
-# recipes-spring-jwt
+# recipes-spring-graphql-jwt
 GraphQL API with springboot and JWT. This is my GraphQl java base proyect with my own security logic.
 I rely on the repositories and examples from the official graphql pages,thx!
 
